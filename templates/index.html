@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coloring Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/print.css" media="print" />
+    <link rel="manifest" href="/manifest.webmanifest">
+  </head>
+
+  <body class="no-js">
+
+    <div class="dialog js-splash dialog-splash" role="main">
+      <h1>Albus</h1>
+      <p>Albus is a colouring app for all ages. Just choose an image from the gallery or upload your own.</p>
+      <p>With its built-in edge detection, Albus can attempt to turn a photo into lines for colouring.</p>
+      <form method="POST" class="js-splash-uploader" action="/" enctype="multipart/form-data">
+        <label for="image-upload-splash">Upload an image</label> <input type="file" name="image" id="image-upload-splash">
+        <button type="submit">Upload</button>
+      </form>
+      <label for="splash-toggle" class="dialog-toggle-label">Start Colouring!</label>
+      <a class="button js-edge-download" href="{{image}}" download="{{filename}}" target="_blank">Download the image</a>
+    </div>
+
+    <script id="js-checkboxes" type="text/x-custom-template">
+      <input type="checkbox" tabindex="-1" id="splash-toggle" class="checkbox-hack">
+      <input type="checkbox" tabindex="-1" id="toolbox-toggle" class="checkbox-hack" checked>
+      <img src="{{ image }}">
+    </script>
+
+    <script id="js-tools" type="text/x-custom-template">
+      <nav class="buttons">
+        <a class="button has-js js-save">Save</a>
+        <label for="toolbox-toggle" class="dialog-toggle-label">Toolbox</label>
+        <button onclick="window.print()">Print</button>
+      </nav>
+
+      <div class="dialog toolbox has-js dialog-toolbox">
+
+        <h2>Brush Type</h2>
+        <label for="tb-brush-type-normal">Round</label> <input type="radio" id="tb-brush-type-normal" name="toolbox-brush-type" value="round" checked>
+
+        <h2>Brush Size</h2>
+        <label for="tb-brush-size-small">Small</label> <input type="radio" id="tb-brush-size-small" name="toolbox-brush-size" value="2">
+        <label for="tb-brush-size-medium">Medium</label> <input type="radio" id="tb-brush-size-medium" name="toolbox-brush-size" value="5" checked>
+        <label for="tb-brush-size-large">Large</label> <input type="radio" id="tb-brush-size-large" name="toolbox-brush-size" value="10">
+        <input type="range" id="tb-brush-size" min="1" max="100" value="5">
+
+        <h2>Brush Colour</h2>
+        <input id="tb-brush-colour" type="color" value="#663399">
+
+        <h2>Brush Opacity</h2>
+        <input type="range" id="tb-brush-opacity" min="0" max="100" value="100">
+
+        <h2>Edge Detection</h2>
+        <form method="POST" action="/" class="js-tools-uploader" enctype="multipart/form-data">
+          <label for="image-upload-tools">Upload an image</label> <input type="file" name="image" id="image-upload-tools">
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+    </script>
+    <script src="edgedetect.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

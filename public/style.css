@@ -1,0 +1,145 @@
+.no-js .has-js  {
+    display: none;
+}
+
+body  {
+    font-family: helvetica;
+    color: #fff;
+
+    line-height: 1.5;
+
+    margin: 0;
+    padding: 0;
+}
+
+h1  {
+    text-transform: uppercase;
+}
+
+canvas  {
+    touch-action: none;
+}
+
+.checkbox-hack  {
+    opacity: 0;
+    position: absolute;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#splash-toggle:checked ~ .dialog-splash   {
+    display: none;
+}
+
+#toolbox-toggle:checked ~ .dialog-toolbox  {
+    display: none;
+}
+
+label[for='toolbox-toggle']::before  {
+    content: 'Close ';
+}
+
+#toolbox-toggle:checked ~ .buttons label[for='toolbox-toggle']::before  {
+    content: 'Open ';
+}
+
+button,
+.button,
+.dialog-toggle-label {
+    background: #8C65C6;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-family: helvetica;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.dialog-toggle-label  {
+    background: #5751CC;
+    display: inline-block;
+}
+
+button[type="submit"]  {
+    display: none;
+}
+
+.no-js button[type="submit"]  {
+    display: inline-block;
+}
+
+.no-js .dialog-toggle-label  {
+    display: none;
+}
+
+.dialog {
+    background: #AD77CE;
+    opacity: 0.98;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+    padding: 5%;
+    z-index: 2;
+    overflow-y: scroll;
+}
+
+.dialog-splash  {
+    display: block;
+}
+
+@media (min-width: 600px)  {
+
+    .dialog {
+        top: 10%;
+        right: 10%;
+        bottom: 10%;
+        left: 10%;
+    }
+}
+
+.js-drop  {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    position: absolute;
+    margin-top: 4rem;
+    top: 0;
+    z-index: 0;
+}
+
+img  {
+    position: absolute;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    margin-top: 4rem;
+    height: 100%;
+    max-height: calc(100vh - 4rem);
+    max-width: 100vw;
+    left: auto;
+    right: auto;
+    width: 100%;
+}
+
+.buttons  {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}

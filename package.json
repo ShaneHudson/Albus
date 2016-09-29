@@ -1,0 +1,18 @@
+{
+  "name": "albus",
+  "version": "0.0.1",
+  "description": "A colouring book app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hapi": "^15.0.3",
+    "inert": "^4.0.2",
+    "phantom": "^2.1.21",
+    "vision": "^4.1.0"
+  }
+}

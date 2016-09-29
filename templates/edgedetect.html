@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coloring Book</title>
+    <style>
+      body  {
+        background-color: #fff;
+        padding: 0;
+        margin: 0;
+      }
+
+      canvas  {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="no-js">
+
+    <img src="{{ image }}" hidden> <!-- fallback default image -->
+    <script src="../vendor/stackblur.min.js"></script>
+    <script src="../edgedetect.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        var canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+
+        var image = document.querySelector('img');
+        var ctx = canvas.getContext('2d');
+        var blur = true;
+        canvas.width = image.width;
+        canvas.height = image.height;
+        if ('undefined' !== typeof ctx.filter) {
+          ctx.filter = "blur(1.2px)";
+          ctx.drawImage(image, 0, 0);
+        }
+        else if ('undefined' !== typeof StackBlur) StackBlur.image(image, canvas, 2, false);
+        else {
+          blur = false;
+          ctx.drawImage(image, 0, 0);
+        }
+        var originalData = ctx.getImageData(0, 0, image.width, image.height);
+        findEdges(originalData, ctx, image, blur);
+      });
+    </script>
+
+  </body>
+</html>

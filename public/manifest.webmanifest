@@ -1,0 +1,8 @@
+{
+  "name": "Albus",
+  "short_name": "Albus",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Albus is a colouring app for all ages. Just choose an image from the gallery or upload your own."
+}
