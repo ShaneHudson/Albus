@@ -5,3 +5,9 @@ All this in under 7Kb transferred.
 
 ## How to Install
 This is a Node.js application so to install use ```npm install``` then ```node index.js```. The install will take a while due to PhantomJS being used for server side rendering.
+
+## Screenshots
+
+![Albus Splash Page](screenshots/albus_splash.png)
+![Albus Edge Detection](screenshots/albus_edge.png)
+![Albus Colouring](screenshots/albus_colour.png)
