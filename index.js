@@ -7,7 +7,7 @@ const Hapi = require('hapi'),
       phantom = require('phantom');
 
 const server = new Hapi.Server();
-server.connection({ port: 3000 });
+server.connection({ port: process.env.PORT || 3000 });
 
 server.register(require('vision'), (err) => {
 
