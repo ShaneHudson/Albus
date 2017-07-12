@@ -1,4 +1,4 @@
-[Live Demo](http://albus-10kapart2016.azurewebsites.net/) | [Development Article](https://shanehudson.net/index.php?p=2016/10/05/creating-my-10k-apart-entry)
+[Live Demo](https://shanehudson.net/tools/albus/) | [Development Article](https://shanehudson.net/index.php?p=2016/10/05/creating-my-10k-apart-entry)
 
 # Albus
 This is a online edge detection website that works in all browsers, including Lynx. It does this using PhantomJS to reuse client side code on the server. On browsers that support canvas, there is a basic colouring book style functionality so the user can colour in the lines created with the edge detection. Browsers that support service workers will enjoy a fully featured offline mode.
